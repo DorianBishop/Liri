@@ -43,4 +43,20 @@ switch (choice) {
     
         })
     }
- 
+    function spotifyThis(song) {
+        spotify.search({
+            type: "track",
+            query: song
+        }, function (err, data) {
+            if (err) {
+                return console.log("Error occurred: " + err);
+            }
+            console.log(
+                `
+                \nArtist: ${data.tracks.items[0].artists[0].name}
+                \nSong: ${data.tracks.items[0].name} 
+                \nLink: ${data.tracks.items[0].external_urls.spotify} 
+                \nAlbum: ${data.tracks.items[0].album.name} 
+                `)
+        })
+    };
