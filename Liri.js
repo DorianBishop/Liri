@@ -16,7 +16,7 @@ switch (choice) {
         if (input) {
             spotifyThis(input);
         } else {
-            spotifyThis("Low Life");
+            spotifyThis("Meek Mill");
         }
         break;
         case "movie-this":
@@ -26,3 +26,21 @@ switch (choice) {
             getMovie("Friday");
         }
         break;
+        case "do-thing":
+            doThing();
+            break;
+        default:
+            console.log("Try again.")
+    }
+    function concert(artist) {
+        axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (response) {
+            var songData = response.data[0];
+            console.log(`
+            \nVenue Name: ${songData.venue.name}
+            \nVenue Location: ${songData.venue.city}, ${songData.venue.region}
+            \nDate of Event: ${ moment(response.data[0].datetime).format("MM/DD/YYYY")}
+            `);
+    
+        })
+    }
+ 
