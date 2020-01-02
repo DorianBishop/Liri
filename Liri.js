@@ -19,3 +19,10 @@ switch (choice) {
             spotifyThis("Low Life");
         }
         break;
+        case "movie-this":
+        if (input) {
+            getMovie(input);
+        } else {
+            getMovie("Friday");
+        }
+        break;
