@@ -23,14 +23,14 @@ switch (choice) {
         if (input) {
             getMovie(input);
         } else {
-            getMovie("Friday");
+            getMovie("Mr .Nobody");
         }
         break;
         case "do-thing":
             doThing();
             break;
         default:
-            console.log("Try again.")
+            console.log("Sorry please try again.")
     }
     function concert(artist) {
         axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp").then(function (response) {
@@ -60,3 +60,21 @@ switch (choice) {
                 `)
         })
     };
+
+    function getMovie(movie) {
+        axios.get("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy").then(
+            function (response) {
+                console.log(`
+                Title:  ${response.data.Title}
+                Year:  ${ response.data.Year}
+                IMDB Rating:  ${ response.data.imdbRating}
+                Rotten Tomatoes Rating:  ${ response.data.Ratings[2].Value}
+                Country:  ${ response.data.Country}
+                Language:  ${ response.data.Language}
+                Plot:  ${ response.data.Plot}
+                Actors:  ${ response.data.Actors}
+                `)
+            })
+    
+    }
+    
