@@ -77,4 +77,14 @@ switch (choice) {
             })
     
     }
+    function doThing() {
+        fs.readFile("random.txt", "utf-8", function (err, data) {
+            if (err) {
+                return console.log(error);
+            }
+            var random = data.split(",");
+            spotifyThis(random[1]);
+        });
+    
+    }
     
