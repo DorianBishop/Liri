@@ -1,6 +1,6 @@
 # Liri - Node
 
-# LIRI stands for Language Interpretation and Recognition Interface. LIRI bot is a command line node app that takes in parameters and returns data.
+ LIRI stands for Language Interpretation and Recognition Interface. LIRI bot is a command line node app that takes in parameters and returns data.
 
 # NPM Dependencies
 dotenv
